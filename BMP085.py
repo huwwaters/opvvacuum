@@ -1,5 +1,7 @@
 #!/usr/bin/python
 
+#Copied from original at https://github.com/adafruit/Adafruit-Raspberry-Pi-Python-Code/blob/master/Adafruit_BMP085/Adafruit_BMP085.py
+
 import time
 from Adafruit_I2C import Adafruit_I2C
 
