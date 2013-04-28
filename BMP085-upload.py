@@ -4,7 +4,7 @@ import sys
 import time
 import datetime
 import gspread
-from Adafruit_BMP085 import BMP085
+from BMP085 import BMP085
 
 # ===========================================================================
 # Google Account Details
