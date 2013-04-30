@@ -1,3 +1,5 @@
+// Compile on RasPi using "gcc Adafruit_DHT.c -l bcm2835 -std=gnu99 -o Adafruit_DHT -ltr"
+
 //  How to access GPIO registers from C-code on the Raspberry-Pi
 //  Example program
 //  15-January-2012
