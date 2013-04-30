@@ -24,7 +24,6 @@ spreadsheet = 'OPV Vacuum'
 bmp = BMP085(0x77)
 
 
-
 # Login with your Google account
 try:
   gc = gspread.login(email, password)
@@ -49,7 +48,7 @@ while(True):
   # Run the DHT program to get the humidity and temperature readings!
 
   output_dht = subprocess.check_output(["./DHT", "2302", "4"]);
-  print output_dht
+#  print output_dht
   matches = re.search("Temp =\s+([0-9.]+)", output_dht)
   if (not matches):
     time.sleep(3)
@@ -64,8 +63,8 @@ while(True):
   humidity = float(matches.group(1))
 
   print "From DHT22"
-  print "Temperature: %.1f C" % temp_dht
-  print "Humidity: %.1f %%" % humidity
+  print "\tTemperature: %.1f C" % temp_dht
+  print "\tHumidity: %.1f %%" % humidity
 
 
   temp_bmp = bmp.readTemperature()
@@ -73,9 +72,9 @@ while(True):
   altitude = bmp.readAltitude()
 
   print "From BMP085"
-  print "Temperature: %.2f C" % temp_bmp
-  print "Pressure: %.2f hPa" % (pressure / 100.0)
-  print "Altitude: %.2f" % altitude
+  print "\tTemperature: %.2f C" % temp_bmp
+  print "\tPressure: %.2f hPa" % (pressure / 100.0)
+  print "\tAltitude: %.2f" % altitude
 
   # Append the data in the spreadsheet, including a timestamp
   try:
@@ -86,5 +85,5 @@ while(True):
     sys.exit()
 
   # Wait 5 seconds before continuing
-  print "Wrote a row to %s" % spreadsheet
+  print "Wrote a row to %s \n" % spreadsheet
   time.sleep(5)
