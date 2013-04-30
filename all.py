@@ -15,7 +15,7 @@ import re
 # Account details for google docs
 email = 'you@gmail.com'
 password = '$hhh!'
-spreadsheet = 'SpreadsheetName'
+spreadsheet = 'OPV Vacuum'
 
 # ===========================================================================
 # Example Code
@@ -49,15 +49,15 @@ while(True):
   # Run the DHT program to get the humidity and temperature readings!
 
   output_dht = subprocess.check_output(["./DHT", "2302", "4"]);
-  print output
-  matches = re.search("Temp =\s+([0-9.]+)", output)
+  print output_dht
+  matches = re.search("Temp =\s+([0-9.]+)", output_dht)
   if (not matches):
     time.sleep(3)
     continue
   temp_dht = float(matches.group(1))
   
   # search for humidity printout
-  matches = re.search("Hum =\s+([0-9.]+)", output)
+  matches = re.search("Hum =\s+([0-9.]+)", output_dht)
   if (not matches):
     time.sleep(3)
     continue
