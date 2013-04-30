@@ -13,7 +13,7 @@ import re
 # ===========================================================================
 
 # Account details for google docs
-email = 'you@somewhere.com'
+email = 'you@gmail.com'
 password = '$hhh!'
 spreadsheet = 'SpreadsheetName'
 
@@ -48,7 +48,7 @@ while(True):
 
   # Run the DHT program to get the humidity and temperature readings!
 
-  output_dht = subprocess.check_output(["./Adafruit_DHT", "2302", "4"]);
+  output_dht = subprocess.check_output(["./DHT", "2302", "4"]);
   print output
   matches = re.search("Temp =\s+([0-9.]+)", output)
   if (not matches):
